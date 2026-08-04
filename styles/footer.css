@@ -1,0 +1,147 @@
+.footer-section{
+    margin-top:120px;
+    padding:80px 0 30px;
+    border-top:1px solid #ececec;
+}
+
+html.dark .footer-section{
+    border-color:#27272a;
+}
+
+.footer-logo{
+    font-size:34px;
+    font-weight:700;
+    text-decoration:none;
+    color:inherit;
+}
+
+.footer-logo span{
+    color:#2563eb;
+}
+
+.footer-text{
+    color:#71717a;
+    line-height:1.8;
+}
+
+.footer-section h5{
+    margin-bottom:24px;
+    font-weight:700;
+}
+
+.footer-section ul{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.footer-section li{
+    margin-bottom:14px;
+}
+
+.footer-section li a{
+    color:#71717a;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.footer-section li a:hover{
+    color:#2563eb;
+}
+
+.footer-social{
+    display:flex;
+    gap:15px;
+    margin-top:30px;
+}
+
+.footer-social a{
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    background:#f4f4f5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:inherit;
+    transition:.3s;
+}
+
+.footer-social a:hover{
+    background:#2563eb;
+    color:white;
+}
+
+html.dark .footer-social a{
+    background:#18181b;
+}
+
+.newsletter{
+    display:flex;
+    margin-top:25px;
+}
+
+.newsletter input{
+    flex:1;
+    height:56px;
+    border:1px solid #e5e7eb;
+    border-radius:50px 0 0 50px;
+    padding:0 22px;
+    outline:none;
+    background:transparent;
+}
+
+.newsletter button{
+    width:70px;
+    border:none;
+    background:#2563eb;
+    color:white;
+    border-radius:0 50px 50px 0;
+}
+
+html.dark .newsletter input{
+    border-color:#3f3f46;
+}
+
+.footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:30px;
+    color:#71717a;
+}
+
+.footer-bottom div{
+    display:flex;
+    gap:25px;
+}
+
+.footer-bottom a{
+    color:#71717a;
+    text-decoration:none;
+}
+
+.footer-bottom a:hover{
+    color:#2563eb;
+}
+
+@media(max-width:768px){
+
+.footer-bottom{
+    flex-direction:column;
+    gap:20px;
+    text-align:center;
+}
+
+.newsletter{
+    flex-direction:column;
+    gap:15px;
+}
+
+.newsletter input,
+.newsletter button{
+    width:100%;
+    border-radius:50px;
+}
+
+}
