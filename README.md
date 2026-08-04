@@ -2,13 +2,15 @@
 
 A modern, responsive, and production-ready e-commerce application built with **Next.js**, **React**, and **TypeScript**. NovaStore focuses on delivering a clean shopping experience with a premium UI, dark/light mode, and scalable architecture.
 
-![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)
-![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5-7952B3?logo=bootstrap)
-![License](https://img.shields.io/badge/License-MIT-green)
+## 🌐 Live Preview
+
+🔗 **Website:** https://nova-store-ecommerce.vercel.app/
 
 ---
+# 🛍️ NovaStore
+
+### 🌐 Live Demo
+https://nova-store-ecommerce.vercel.app/
 
 ## ✨ Features
 
@@ -48,11 +50,10 @@ A modern, responsive, and production-ready e-commerce application built with **N
 
 ### Future Backend
 
-- Node.js
 - Prisma ORM
 - MySQL
 - Vercel Blob
-- Razorpay (Test Mode)
+- Razorpay (Sandbox)
 - JWT Authentication
 
 ---
@@ -63,60 +64,50 @@ A modern, responsive, and production-ready e-commerce application built with **N
 src/
 │
 ├── app/
-│
 ├── components/
 │   ├── comps/
 │   ├── layout/
 │   └── skeleton/
-│
 ├── styles/
-│
 ├── types/
-│
 └── utils/
 ```
 
 ---
 
-## 📸 Screens
+## 📸 Screenshots
 
-- Modern Navbar
-- Hero Section
-- Categories
-- Featured Products
-- Skeleton Loading
-- Footer
-- Dark / Light Mode
+> Screenshots will be added as the project evolves.
 
 ---
 
 ## 🛠️ Installation
 
-Clone the repository
+Clone the repository:
 
 ```bash
 git clone https://github.com/aaruni107/NovaStoreEcommerce.git
 ```
 
-Move into the project
+Go to the project directory:
 
 ```bash
 cd NovaStoreEcommerce
 ```
 
-Install dependencies
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-Run the development server
+Start the development server:
 
 ```bash
 npm run dev
 ```
 
-Open:
+Visit:
 
 ```
 http://localhost:3000
@@ -124,46 +115,28 @@ http://localhost:3000
 
 ---
 
-## 📌 Upcoming Features
+## 🚧 Roadmap
 
-- Authentication
-- User Dashboard
-- Product Details
+- User Authentication
+- Product Details Page
 - Shopping Cart
 - Wishlist
-- Checkout
-- Orders
+- Checkout Flow
 - Razorpay Integration
+- User Dashboard
 - Admin Dashboard
 - Product Management
 - Category Management
-- Coupon System
+- Order Management
+- Coupons & Discounts
 - Reviews & Ratings
-- Search & Filters
-- Image Upload with Vercel Blob
-
----
-
-## 📖 Learning Goals
-
-This project is being developed to practice:
-
-- Scalable Next.js Architecture
-- Component-Based Development
-- TypeScript Best Practices
-- Responsive Design
-- API Integration
-- State Management
-- Clean UI/UX
-- Production-Level Code Organization
+- Search & Advanced Filters
 
 ---
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome.
-
-Feel free to fork the project and create a pull request.
+Contributions are welcome! Feel free to fork this repository, open issues, or submit pull requests.
 
 ---
 
@@ -178,7 +151,8 @@ This project is licensed under the MIT License.
 **Aaruni Chatterjee**
 
 - GitHub: https://github.com/aaruni107
+- Live Demo: https://nova-store-ecommerce.vercel.app/
 
 ---
 
-⭐ If you like this project, don't forget to star the repository!
+⭐ If you like this project, consider giving it a star!
