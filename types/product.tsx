@@ -24,4 +24,12 @@ export interface Product {
   featured?: boolean;
   page?: number;
   instock?: string;
+  reviews?: Review[];
+}
+export interface Review {
+  rating: number;
+  comment: string;
+  date: string;
+  reviewerName: string;
+  reviewerEmail: string;
 }

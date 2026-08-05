@@ -55,7 +55,7 @@ export default function Navbar() {
             <nav className="desktop-nav">
               <Link href="/">Home</Link>
               <Link href="/shop">Shop</Link>
-              <Link href="/categories">Categories</Link>
+              <Link href="/category">Categories</Link>
               <Link href="/deals">Deals</Link>
               <Link href="/contact">Contact</Link>
             </nav>

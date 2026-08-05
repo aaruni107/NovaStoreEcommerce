@@ -53,7 +53,14 @@ export default function Home() {
   const fetchProducts = async (currentPage: number) => {
     try {
       setLoading(true);
+      const cacheKey = `products-page-${currentPage}`;
+      const cached = sessionStorage.getItem(cacheKey);
 
+      if (cached) {
+        setProducts(JSON.parse(cached));
+        setLoading(false);
+        return;
+      }
       const skip = (currentPage - 1) * limit;
 
       const res = await fetch(
@@ -68,6 +75,7 @@ export default function Home() {
         slug: item.title.toLowerCase().replace(/\s+/g, "-"),
         brand: item.brand,
         image: item.thumbnail,
+        images: item.images,
         price: item.price,
         salePrice:
           item.discountPercentage > 0
@@ -75,12 +83,37 @@ export default function Home() {
             : null,
         rating: item.rating,
         reviewCount: item.reviews.length,
+        reviews: item.reviews,
         category: item.category,
         badge: item.discountPercentage > 0 ? "Sale" : "New",
         instock: item.availabilityStatus,
       }));
 
       setProducts(formattedProducts);
+      sessionStorage.setItem(cacheKey, JSON.stringify(formattedProducts));
+      const allProducts: Product[] = JSON.parse(
+        sessionStorage.getItem("products-cache") || "[]",
+      );
+
+      const updatedCache = [...allProducts];
+
+      formattedProducts.forEach((product) => {
+        const index = updatedCache.findIndex((item) => item.id === product.id);
+
+        if (index === -1) {
+          // New product
+          updatedCache.push(product);
+        } else {
+          // Existing product
+          const cachedProduct = updatedCache[index];
+
+          if (JSON.stringify(cachedProduct) !== JSON.stringify(product)) {
+            updatedCache[index] = product;
+          }
+        }
+      });
+
+      sessionStorage.setItem("products-cache", JSON.stringify(updatedCache));
     } catch (err) {
       console.error(err);
     } finally {

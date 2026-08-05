@@ -100,7 +100,22 @@ html.dark .mobile-drawer {
 .product-body{
     padding:22px;
 }
+html.dark .product-breadcrumb{
+    background:#18181b;
+    border-color:#27272a;
+}
 
+html.dark .product-breadcrumb a{
+    color:#a1a1aa;
+}
+
+html.dark .product-breadcrumb a:hover{
+    color:#60a5fa;
+}
+
+html.dark .breadcrumb-icon{
+    color:#52525b;
+}
 .product-body h5{
     font-size:20px;
     margin:8px 0;
@@ -280,7 +295,148 @@ html.dark .skeleton{
     );
     background-size:400% 100%;
 }
+.skeleton{
+    background:linear-gradient(
+        90deg,
+        #ececec 25%,
+        #f6f6f6 37%,
+        #ececec 63%
+    );
+    background-size:400% 100%;
+    animation:skeleton-loading 1.3s infinite linear;
+}
 
+html.dark .skeleton{
+    background:linear-gradient(
+        90deg,
+        #27272a 25%,
+        #3f3f46 37%,
+        #27272a 63%
+    );
+    background-size:400% 100%;
+}
+
+@keyframes skeleton-loading{
+
+0%{
+background-position:100% 0;
+}
+
+100%{
+background-position:-100% 0;
+}
+
+}
+
+/* ---------- */
+
+.skeleton-breadcrumb{
+    width:320px;
+    height:20px;
+    border-radius:10px;
+}
+
+.skeleton-thumb{
+    width:80px;
+    height:80px;
+    border-radius:18px;
+}
+
+.skeleton-main-image{
+    width:100%;
+    height:600px;
+    border-radius:28px;
+}
+
+.skeleton-brand{
+    width:120px;
+    height:16px;
+    border-radius:20px;
+}
+
+.skeleton-title{
+    width:100%;
+    height:26px;
+    border-radius:20px;
+}
+
+.skeleton-title.short{
+    width:70%;
+}
+
+.skeleton-rating{
+    width:150px;
+    height:18px;
+    border-radius:20px;
+}
+
+.skeleton-price{
+    width:120px;
+    height:40px;
+    border-radius:20px;
+}
+
+.skeleton-old-price{
+    width:80px;
+    height:22px;
+    border-radius:20px;
+}
+
+.skeleton-stock{
+    width:120px;
+    height:20px;
+    border-radius:20px;
+}
+
+.skeleton-text{
+    width:100%;
+    height:18px;
+    border-radius:20px;
+}
+
+.skeleton-qty{
+    width:160px;
+    height:50px;
+    border-radius:50px;
+}
+
+.skeleton-button{
+    height:56px;
+    border-radius:50px;
+}
+
+.skeleton-circle{
+    width:56px;
+    height:56px;
+    border-radius:50%;
+}
+
+.skeleton-feature{
+    width:100%;
+    height:80px;
+    border-radius:20px;
+}
+
+@media(max-width:992px){
+
+.skeleton-main-image{
+    height:450px;
+}
+
+}
+
+@media(max-width:576px){
+
+.skeleton-main-image{
+    height:320px;
+}
+
+.skeleton-thumb{
+    width:65px;
+    height:65px;
+}
+
+}
 @keyframes skeleton{
     from{
         background-position:100% 0;
