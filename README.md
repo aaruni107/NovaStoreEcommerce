@@ -1,36 +1,158 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛍️ NovaStore
 
-## Getting Started
+A modern, responsive, and production-ready e-commerce application built with **Next.js**, **React**, and **TypeScript**. NovaStore focuses on delivering a clean shopping experience with a premium UI, dark/light mode, and scalable architecture.
 
-First, run the development server:
+## 🌐 Live Preview
+
+🔗 **Website:** https://nova-store-ecommerce.vercel.app/
+
+---
+# 🛍️ NovaStore
+
+### 🌐 Live Demo
+https://nova-store-ecommerce.vercel.app/
+
+## ✨ Features
+
+- 🎨 Modern & Responsive UI
+- 🌙 Dark / Light Theme
+- 🏠 Premium Hero Section
+- 🗂️ Dynamic Categories
+- ⭐ Featured Products
+- 🛒 Shopping Cart UI
+- ❤️ Wishlist UI
+- 🔍 Product Search
+- 📱 Mobile-Friendly Navigation
+- ⚡ Skeleton Loading
+- 📄 Pagination
+- 🎯 Reusable Components
+
+---
+
+## 🚀 Tech Stack
+
+### Frontend
+
+- Next.js 15
+- React
+- TypeScript
+- Bootstrap 5
+- CSS3
+
+### Icons
+
+- React Bootstrap Icons
+- Lucide React
+
+### API
+
+- DummyJSON API
+
+### Future Backend
+
+- Prisma ORM
+- MySQL
+- Vercel Blob
+- Razorpay (Sandbox)
+- JWT Authentication
+
+---
+
+## 📂 Folder Structure
+
+```text
+src/
+│
+├── app/
+├── components/
+│   ├── comps/
+│   ├── layout/
+│   └── skeleton/
+├── styles/
+├── types/
+└── utils/
+```
+
+---
+
+## 📸 Screenshots
+
+> Screenshots will be added as the project evolves.
+
+---
+
+## 🛠️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/aaruni107/NovaStoreEcommerce.git
+```
+
+Go to the project directory:
+
+```bash
+cd NovaStoreEcommerce
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🚧 Roadmap
 
-To learn more about Next.js, take a look at the following resources:
+- User Authentication
+- Product Details Page
+- Shopping Cart
+- Wishlist
+- Checkout Flow
+- Razorpay Integration
+- User Dashboard
+- Admin Dashboard
+- Product Management
+- Category Management
+- Order Management
+- Coupons & Discounts
+- Reviews & Ratings
+- Search & Advanced Filters
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🤝 Contributing
 
-## Deploy on Vercel
+Contributions are welcome! Feel free to fork this repository, open issues, or submit pull requests.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 👨‍💻 Author
+
+**Aaruni Chatterjee**
+
+- GitHub: https://github.com/aaruni107
+- Live Demo: https://nova-store-ecommerce.vercel.app/
+
+---
+
+⭐ If you like this project, consider giving it a star!
