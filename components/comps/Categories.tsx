@@ -33,7 +33,7 @@ export default function Categories({ categories }: Props) {
         </div>
 
         <Link
-          href="/categories"
+          href="/category"
           className="btn btn-outline-primary rounded-pill px-4"
         >
           View All

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import "@/styles/hero.css";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -46,7 +47,12 @@ export default function Hero() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.45 }}
             >
-              <button className="btn-shop">Shop Now</button>
+              <Link
+                href="/category"
+                className="btn-shop text-decoration-none text-reset"
+              >
+                Shop Now
+              </Link>
 
               <button className="btn-outline-custom">Explore</button>
             </motion.div>

@@ -11,34 +11,37 @@ export default function Home() {
   const categories = [
     {
       id: 1,
-      name: "Headphones",
-      slug: "headphones",
-      image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
+      name: "Beauty",
+      slug: "beauty",
+      image:
+        "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&q=80",
       productCount: 124,
     },
     {
       id: 2,
-      name: "Laptops",
-      slug: "laptops",
-      image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+      name: "Grocery",
+      slug: "groceries",
+      image:
+        "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80",
       productCount: 82,
     },
     {
       id: 3,
-      name: "Smart Watches",
-      slug: "smart-watches",
-      image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30",
+      name: "Kitchen Accessories",
+      slug: "kitchen-accessories",
+      image:
+        "https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&w=800&q=80",
       productCount: 56,
     },
     {
       id: 4,
-      name: "Gaming",
-      slug: "gaming",
-      image: "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3",
+      name: "Mens Shirts",
+      slug: "mens-shirts",
+      image:
+        "https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=800&q=80",
       productCount: 97,
     },
   ];
-
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
 

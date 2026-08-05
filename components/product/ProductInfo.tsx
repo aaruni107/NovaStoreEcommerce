@@ -131,9 +131,6 @@ export default function ProductInfo({ product }: Props) {
           </div>
         </div>
       </div>
-      <div className="reviews-section">
-        <h3 className="mb-4">Customer Reviews ({product.reviewCount})</h3>
-      </div>
     </div>
   );
 }

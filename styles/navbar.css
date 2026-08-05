@@ -255,3 +255,124 @@ display:block;
 }
 
 }
+.search-box {
+    position: relative;
+}
+
+.search-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    max-height: 420px;
+    overflow-y: auto;
+
+    background: var(--bs-body-bg);
+    color: var(--bs-body-color);
+
+    border: 1px solid var(--bs-border-color);
+    border-radius: 16px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+    z-index: 1050;
+}
+
+.search-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: background-color .2s ease;
+}
+
+.search-item:not(:last-child) {
+    border-bottom: 1px solid var(--bs-border-color);
+}
+
+.search-item:hover {
+    background: rgba(var(--bs-secondary-rgb), 0.12);
+}
+
+.search-item img {
+    width: 56px;
+    height: 56px;
+    border-radius: 10px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.search-item h6 {
+    margin: 0;
+    color: var(--bs-body-color);
+    font-size: .95rem;
+    font-weight: 600;
+}
+
+.search-item small {
+    display: block;
+    margin-top: 2px;
+    color: var(--bs-secondary-color);
+    font-size: .8rem;
+}
+
+.search-dropdown::-webkit-scrollbar {
+    width: 8px;
+}
+
+.search-dropdown::-webkit-scrollbar-thumb {
+    background: rgba(var(--bs-secondary-rgb), .35);
+    border-radius: 999px;
+}
+
+.search-dropdown::-webkit-scrollbar-thumb:hover {
+    background: rgba(var(--bs-secondary-rgb), .55);
+}
+.search-dropdown {
+    background: var(--bs-body-bg);
+    border: 1px solid var(--bs-border-color);
+    border-radius: 16px;
+    overflow-y: auto;
+    max-height: 420px;
+    color: var(--bs-body-color);
+}
+
+.search-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.search-item:hover {
+    background: var(--bs-tertiary-bg);
+}
+
+.search-item h6 {
+    margin: 0;
+    font-size: .95rem;
+    font-weight: 600;
+    color: var(--bs-body-color);
+}
+
+.search-item small {
+    color: var(--bs-secondary-color);
+}
+html.dark .search-dropdown {
+    background: #18181b;
+    border-color: #2d2d2d;
+}
+
+html.dark .search-item:hover {
+    background: #27272a;
+}
+
+html.dark .search-item h6 {
+    color: #f4f4f5;
+}
+
+html.dark .search-item small {
+    color: #a1a1aa;
+}

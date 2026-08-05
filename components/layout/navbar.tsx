@@ -1,5 +1,6 @@
 "use client";
-
+import { useRouter } from "next/navigation";
+import { Product } from "@/types/product";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
@@ -17,11 +18,73 @@ import "@/styles/navbar.css";
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
+  const router = useRouter();
 
+  const [search, setSearch] = useState("");
+  const [searchResults, setSearchResults] = useState<Product[]>([]);
+  const [allProducts, setAllProducts] = useState<Product[]>([]);
   const [mounted, setMounted] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    loadProducts();
+  }, []);
 
+  async function loadProducts() {
+    const cache = sessionStorage.getItem("product-cache");
+
+    if (cache) {
+      setAllProducts(JSON.parse(cache));
+      return;
+    }
+
+    const res = await fetch("https://dummyjson.com/products?limit=0");
+    const data = await res.json();
+
+    const formatted: Product[] = data.products.map((item: any) => ({
+      id: item.id,
+      name: item.title,
+      slug: item.title.toLowerCase().replace(/\s+/g, "-"),
+      brand: item.brand,
+      image: item.thumbnail,
+      images: item.images,
+      price: item.price,
+      salePrice:
+        item.discountPercentage > 0
+          ? Math.round(item.price / (1 - item.discountPercentage / 100))
+          : null,
+      rating: item.rating,
+      reviewCount: item.reviews?.length ?? 0,
+      reviews: item.reviews ?? [],
+      category: item.category,
+      badge: item.discountPercentage > 0 ? "Sale" : "New",
+      instock: item.availabilityStatus,
+    }));
+
+    sessionStorage.setItem("products-cache", JSON.stringify(formatted));
+
+    setAllProducts(formatted);
+  }
+  useEffect(() => {
+    if (!search.trim()) {
+      setSearchResults([]);
+      return;
+    }
+
+    const value = search.toLowerCase();
+
+    const filtered = allProducts
+      .filter((p) => {
+        return (
+          p.name.toLowerCase().includes(value) ||
+          p.brand?.toLowerCase().includes(value) ||
+          p.category.toLowerCase().includes(value)
+        );
+      })
+      .slice(0, 8);
+
+    setSearchResults(filtered);
+  }, [search, allProducts]);
   useEffect(() => {
     setMounted(true);
 
@@ -60,12 +123,38 @@ export default function Navbar() {
               <Link href="/contact">Contact</Link>
             </nav>
 
-            <div className="search-box d-none d-xl-flex">
+            <div className="search-box d-none d-xl-flex position-relative">
               <Search />
 
-              <input type="text" placeholder="Search products..." />
-            </div>
+              <input
+                type="text"
+                placeholder="Search products..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
 
+              {searchResults.length > 0 && (
+                <div className="search-dropdown">
+                  {searchResults.map((product) => (
+                    <div
+                      key={product.id}
+                      className="search-item"
+                      onClick={() => {
+                        setSearch("");
+                        router.push(`/product/${product.slug}`);
+                      }}
+                    >
+                      <img src={product.image} alt={product.name} />
+
+                      <div>
+                        <h6>{product.name}</h6>
+                        <small>${product.price}</small>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
             <div className="navbar-icons">
               <button className="nav-icon-btn">
                 <Heart />

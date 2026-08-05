@@ -25,17 +25,26 @@ export default function CategoryPage() {
     try {
       setLoading(true);
 
-      const cacheKey = `category-${category}`;
+      const cacheKey = "products-cache";
 
       const cached = sessionStorage.getItem(cacheKey);
 
       if (cached) {
-        setProducts(JSON.parse(cached));
-        return;
+        const allProducts: Product[] = JSON.parse(cached);
+
+        const categoryProducts = allProducts.filter(
+          (p) => p.category === category,
+        );
+
+        if (categoryProducts.length > 0) {
+          setProducts(categoryProducts);
+          setLoading(false);
+          return;
+        }
       }
 
       const res = await fetch(
-        `https://dummyjson.com/products/category/${category}`
+        `https://dummyjson.com/products/category/${category}`,
       );
 
       const data = await res.json();
@@ -50,27 +59,29 @@ export default function CategoryPage() {
         price: item.price,
         salePrice:
           item.discountPercentage > 0
-            ? Math.round(
-                item.price /
-                  (1 - item.discountPercentage / 100)
-              )
+            ? Math.round(item.price / (1 - item.discountPercentage / 100))
             : null,
         rating: item.rating,
         reviewCount: item.reviews.length,
         reviews: item.reviews,
         category: item.category,
-        badge:
-          item.discountPercentage > 0
-            ? "Sale"
-            : "New",
+        badge: item.discountPercentage > 0 ? "Sale" : "New",
         instock: item.availabilityStatus,
       }));
 
       setProducts(formatted);
 
+      let allProducts: Product[] = cached ? JSON.parse(cached) : [];
+
+      // Merge without duplicates
+      const productMap = new Map<number, Product>();
+
+      allProducts.forEach((product) => productMap.set(product.id, product));
+      formatted.forEach((product) => productMap.set(product.id, product));
+
       sessionStorage.setItem(
         cacheKey,
-        JSON.stringify(formatted)
+        JSON.stringify(Array.from(productMap.values())),
       );
     } finally {
       setLoading(false);
@@ -82,16 +93,9 @@ export default function CategoryPage() {
       <Navbar />
 
       <section className="container py-5">
+        <h1 className="mb-5 text-capitalize">{slug}</h1>
 
-        <h1 className="mb-5 text-capitalize">
-          {slug}
-        </h1>
-
-        <FeaturedProducts
-          products={products}
-          loading={loading}
-        />
-
+        <FeaturedProducts products={products} loading={loading} />
       </section>
 
       <Footer />
