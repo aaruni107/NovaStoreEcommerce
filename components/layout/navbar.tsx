@@ -199,12 +199,39 @@ export default function Navbar() {
               </button>
             </div>
 
-            <div className="drawer-search">
+            <div className="drawer-search position-relative">
               <Search />
 
-              <input placeholder="Search..." />
-            </div>
+              <input
+                type="text"
+                placeholder="Search products..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              />
 
+              {searchResults.length > 0 && (
+                <div className="search-dropdown mobile-search-dropdown">
+                  {searchResults.map((product) => (
+                    <div
+                      key={product.id}
+                      className="search-item"
+                      onClick={() => {
+                        setSearch("");
+                        setMenuOpen(false);
+                        router.push(`/product/${product.slug}`);
+                      }}
+                    >
+                      <img src={product.image} alt={product.name} />
+
+                      <div className="flex-grow-1">
+                        <h6>{product.name}</h6>
+                        <small>${product.price}</small>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
             <nav className="drawer-nav">
               <Link href="/" onClick={() => setMenuOpen(false)}>
                 Home
