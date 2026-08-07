@@ -15,11 +15,12 @@ import {
   Sun,
 } from "react-bootstrap-icons";
 import "@/styles/navbar.css";
+import { useCart } from "@/context/CartContext";
 
 export default function Navbar() {
   const { theme, setTheme } = useTheme();
   const router = useRouter();
-
+  const { totalItems } = useCart();
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState<Product[]>([]);
   const [allProducts, setAllProducts] = useState<Product[]>([]);
@@ -59,6 +60,7 @@ export default function Navbar() {
       category: item.category,
       badge: item.discountPercentage > 0 ? "Sale" : "New",
       instock: item.availabilityStatus,
+      stock: item.stock,
     }));
 
     sessionStorage.setItem("products-cache", JSON.stringify(formatted));
@@ -160,10 +162,10 @@ export default function Navbar() {
                 <Heart />
               </button>
 
-              <button className="nav-icon-btn cart-btn">
+              <Link href={"/cart"} className="nav-icon-btn cart-btn">
                 <Cart3 />
-                <span>2</span>
-              </button>
+                <span>{totalItems}</span>
+              </Link>
 
               <button className="nav-icon-btn">
                 <Person />

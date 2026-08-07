@@ -90,6 +90,7 @@ export default function Home() {
         category: item.category,
         badge: item.discountPercentage > 0 ? "Sale" : "New",
         instock: item.availabilityStatus,
+        stock: item.stock
       }));
 
       setProducts(formattedProducts);

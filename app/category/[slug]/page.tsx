@@ -25,7 +25,7 @@ export default function CategoryPage() {
     try {
       setLoading(true);
 
-      const cacheKey = "products-cache";
+      const cacheKey = "category-cache";
 
       const cached = sessionStorage.getItem(cacheKey);
 

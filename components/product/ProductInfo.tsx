@@ -1,7 +1,6 @@
 "use client";
 
-import { Review } from "@/types/product";
-import { h1 } from "framer-motion/client";
+
 import { useState } from "react";
 import {
   StarFill,
@@ -13,6 +12,8 @@ import {
   ArrowRepeat,
   ShieldCheck,
 } from "react-bootstrap-icons";
+import AddToCart from "../cart/AddToCartButton";
+import Link from "next/link";
 
 interface Props {
   product: any;
@@ -71,29 +72,10 @@ export default function ProductInfo({ product }: Props) {
 
       <hr />
 
-      <div className="qty-wrapper">
-        <label>Quantity</label>
-
-        <div className="qty-box">
-          <button disabled={qty === 1} onClick={numberCanSubtract}>
-            <Dash />
-          </button>
-
-          <span>{qty}</span>
-
-          <button onClick={numberCanAdd}>
-            <Plus />
-          </button>
-        </div>
-      </div>
-
       <div className="product-buttons">
-        <button className="btn-cart">
-          <Cart3 />
-          Add To Cart
-        </button>
+        <AddToCart product={product} />
 
-        <button className="btn-buy">Buy Now</button>
+        <Link href="#" className="btn-buy">Buy Now</Link>
 
         <button className="btn-wishlist">
           <Heart />

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Heart, ShoppingCart, Star, Eye } from "lucide-react";
 
 import { Product } from "@/types/product";
+import AddToCart from "../cart/AddToCartButton";
 
 interface Props {
   product: Product;
@@ -56,10 +57,7 @@ export default function ProductCard({ product }: Props) {
         </div>
 
         <div className="product-actions">
-          <button className="cart-btn">
-            <ShoppingCart size={18} />
-            Add to Cart
-          </button>
+          <AddToCart product= {product}/>
 
           <button className="quick-btn">
             <Eye size={18} />

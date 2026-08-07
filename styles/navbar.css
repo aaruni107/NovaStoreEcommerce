@@ -415,3 +415,43 @@ html.dark .search-item small {
         font-size: 0.75rem;
     }
 }
+.nav-icon-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.cart-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+
+    min-width: 18px;
+    height: 18px;
+
+    padding: 0 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 999px;
+
+    background: #2563eb;
+    color: #fff;
+
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+
+    border: 2px solid var(--navbar-bg, #fff);
+}
+
+html.dark .cart-count {
+    border-color: #09090b;
+}
