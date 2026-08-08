@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Heart, ShoppingCart, Star, Eye } from "lucide-react";
+import { Star, Eye } from "lucide-react";
 
 import { Product } from "@/types/product";
 import AddToCart from "../cart/AddToCartButton";
+import WishlistButton from "../wishlist/wishlistbutton";
 
 interface Props {
   product: Product;
@@ -18,9 +19,7 @@ export default function ProductCard({ product }: Props) {
       {product.instock && (
         <span className="product-badge">{product.instock}</span>
       )}
-      <button className="wishlist-btn">
-        <Heart size={18} />
-      </button>
+       <WishlistButton product={product}/>
 
       <Link href={`/product/${product.slug}`}>
         <div className="product-image">
@@ -59,9 +58,9 @@ export default function ProductCard({ product }: Props) {
         <div className="product-actions">
           <AddToCart product= {product}/>
 
-          <button className="quick-btn">
+          <Link href={`/product/${product.slug}`} className="quick-btn">
             <Eye size={18} />
-          </button>
+          </Link>
         </div>
       </div>
     </div>

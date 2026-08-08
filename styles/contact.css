@@ -1,0 +1,142 @@
+.contact-page {
+  padding: 80px 5%;
+  background: #0a0a0a;
+  color: #fff;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* LEFT */
+.contact-info h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+.info-box {
+  margin-bottom: 20px;
+}
+
+.info-box h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.info-box p {
+  color: #ccc;
+}
+
+/* RIGHT CARD */
+.contact-form {
+  background: #111;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.5);
+}
+
+/* INPUTS */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #222;
+  background: #0a0a0a;
+  color: #fff;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #3b82f6;
+}
+
+/* TEXTAREA */
+textarea {
+  height: 120px;
+  resize: none;
+}
+
+/* BUTTON */
+.contact-form button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #3b82f6, #2563eb);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(59,130,246,0.3);
+}
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+}
+/* CONTACT PAGE BASE */
+.contact-page {
+  padding: 80px 5%;
+}
+
+/* LIGHT MODE DEFAULT */
+.contact-page {
+  background: #ffffff;
+  color: #111;
+}
+
+/* DARK MODE */
+html.dark .contact-page {
+  background: #09090b;
+  color: #fff;
+}
+.contact-info h1 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  color: #6b7280;
+  margin-bottom: 30px;
+}
+
+html.dark .contact-info p {
+  color: #a1a1aa;
+}
+
+.info-box {
+  margin-bottom: 25px;
+}
+
+.info-box h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.info-box p {
+  margin-top: 5px;
+}

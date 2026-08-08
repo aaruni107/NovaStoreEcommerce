@@ -119,9 +119,7 @@ export default function Navbar() {
 
             <nav className="desktop-nav">
               <Link href="/">Home</Link>
-              <Link href="/shop">Shop</Link>
               <Link href="/category">Categories</Link>
-              <Link href="/deals">Deals</Link>
               <Link href="/contact">Contact</Link>
             </nav>
 
@@ -158,9 +156,9 @@ export default function Navbar() {
               )}
             </div>
             <div className="navbar-icons">
-              <button className="nav-icon-btn">
+              <Link href={"/wishlist"} className="nav-icon-btn">
                 <Heart />
-              </button>
+              </Link>
 
               <Link href={"/cart"} className="nav-icon-btn cart-btn">
                 <Cart3 />
@@ -196,9 +194,15 @@ export default function Navbar() {
                 <span>Nova</span>Store
               </h4>
 
-              <button onClick={() => setMenuOpen(false)}>
-                <X />
-              </button>
+              <div className="drawer-actions">
+                <button className="nav-icon-btn" onClick={toggleTheme}>
+                  {mounted ? theme === "dark" ? <Sun /> : <Moon /> : null}
+                </button>
+
+                <button onClick={() => setMenuOpen(false)}>
+                  <X />
+                </button>
+              </div>
             </div>
 
             <div className="drawer-search position-relative">
@@ -238,21 +242,18 @@ export default function Navbar() {
               <Link href="/" onClick={() => setMenuOpen(false)}>
                 Home
               </Link>
-
-              <Link href="/shop" onClick={() => setMenuOpen(false)}>
-                Shop
-              </Link>
-
               <Link href="/categories" onClick={() => setMenuOpen(false)}>
                 Categories
               </Link>
 
-              <Link href="/deals" onClick={() => setMenuOpen(false)}>
-                Deals
-              </Link>
-
               <Link href="/contact" onClick={() => setMenuOpen(false)}>
                 Contact
+              </Link>
+              <Link href="/cart" onClick={() => setMenuOpen(false)}>
+                Cart
+              </Link>
+              <Link href={"/wishlist"} onClick={() => setMenuOpen(false)}>
+                Wishlist
               </Link>
             </nav>
           </div>
